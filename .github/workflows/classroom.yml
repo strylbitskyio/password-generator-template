@@ -1,0 +1,9 @@
+name: Autograding Tests
+on: [push]
+jobs:
+  check-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required project files
+        run: test -f index.html && test -f style.css && test -f script.js && test -f README.md
